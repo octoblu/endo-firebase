@@ -1,0 +1,19 @@
+{
+  type: 'object'
+  title: 'Set Value'
+  'x-group-name': 'Database'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      required: ['value']
+      properties:
+        reference:
+          type: 'string'
+          title: 'Reference'
+          description: 'Your reference (i.e. /users/someUser)'
+        setValue:
+          type: 'string'
+          title: 'Set Value'
+          description: 'Value(s) to set!'
+}
