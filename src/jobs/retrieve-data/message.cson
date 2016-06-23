@@ -1,0 +1,26 @@
+{
+  type: 'object'
+  title: 'Retrieve Data'
+  'x-group-name': 'Database'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      required: ['value']
+      properties:
+        reference:
+          type: 'string'
+          title: 'Reference'
+          description: 'Your reference (i.e. /users/someUser)'
+        event:
+          type: 'string'
+          title: 'Event'
+          description: 'What recent change should the request return?'
+          'enum': [
+            'value'
+            'child_added'
+            'child_changed'
+            'child_removed'
+            'child_moved'
+          ]
+}

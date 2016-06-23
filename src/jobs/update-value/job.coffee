@@ -2,7 +2,7 @@ firebase = require 'firebase'
 http   = require 'http'
 _      = require 'lodash'
 
-class RetrieveData
+class SetValue
   constructor: ({@encrypted}) ->
 
     {apiKey, authDomain, databaseURL, storageBucket} = @encrypted.secrets.credentials
@@ -19,22 +19,21 @@ class RetrieveData
 
   do: ({data}, callback) =>
     return callback @_userError(422, '') unless data?
-    { reference, event } = data
+    { reference, setValue } = data
 
-    firebase.database().ref(reference).once(event).then( (snapshot) =>
-       return callback null, {
-         metadata:
-           code: 200
-           status: http.STATUS_CODES[200]
-         data: @_processResults snapshot.val
-       }
-    )
+    firebase.database().ref(reference).set(setValue)
 
+    # return callback null, {
+    #   metadata:
+    #     code: 200
+    #     status: http.STATUS_CODES[200]
+    #   data: @_processResults results
+    # }
     return callback null
 
   _processResult: (result) =>
     {
-      snapshot: result
+      result: result
     }
 
   _processResults: (results) =>
@@ -45,4 +44,4 @@ class RetrieveData
     error.code = code
     return error
 
-module.exports = RetrieveData
+module.exports = SetValue
