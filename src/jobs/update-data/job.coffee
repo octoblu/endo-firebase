@@ -2,10 +2,11 @@ firebase = require 'firebase'
 http   = require 'http'
 _      = require 'lodash'
 
-class SetValue
+class UpdateData
   constructor: ({@encrypted}) ->
 
-    {apiKey, authDomain, databaseURL, storageBucket} = @encrypted.secrets.credentials
+    {databaseURL, storageBucket} = @encrypted
+    {apiKey, authDomain} = @encrypted.secrets.credentials
     return callback @_userError(422, 'Credentials required') apiKey? && authDomain? && databaseURL? && storageBucket?
 
     @app = firebase.initializeApp {
@@ -44,4 +45,4 @@ class SetValue
     error.code = code
     return error
 
-module.exports = SetValue
+module.exports = UpdateData

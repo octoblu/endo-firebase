@@ -1,6 +1,6 @@
 {
   type: 'object'
-  title: 'Set Value'
+  title: 'Set Data'
   'x-group-name': 'Database'
   required: ['data']
   properties:

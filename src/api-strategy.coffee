@@ -29,8 +29,10 @@ class FirebaseStrategy extends PassportStrategy
     @success {
       id:       username
       username: username
+      databaseURL: databaseURL
+      storageBucket: storageBucket
       secrets:
-        credentials: {apiKey, authDomain, databaseURL, storageBucket}
+        credentials: {apiKey, authDomain}
     }
 
   authorizationUrl: ({bearerToken}) ->
