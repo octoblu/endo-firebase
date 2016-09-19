@@ -1,10 +1,13 @@
 # endo-firebase
 
+[![Build Status](https://travis-ci.org/octoblu/endo-firebase.svg?branch=master)](https://travis-ci.org/octoblu/endo-firebase)
+[![Test Coverage](https://codecov.io/gh/octoblu/endo-firebase/branch/master/graph/badge.svg)](https://codecov.io/gh/octoblu/endo-firebase)
 [![Dependency status](http://img.shields.io/david/octoblu/endo-firebase.svg?style=flat)](https://david-dm.org/octoblu/endo-firebase)
 [![devDependency Status](http://img.shields.io/david/dev/octoblu/endo-firebase.svg?style=flat)](https://david-dm.org/octoblu/endo-firebase#info=devDependencies)
-[![Build Status](http://img.shields.io/travis/octoblu/endo-firebase.svg?style=flat&branch=master)](https://travis-ci.org/octoblu/endo-firebase)
+[![Slack Status](http://community-slack.octoblu.com/badge.svg)](http://community-slack.octoblu.com)
 
 [![NPM](https://nodei.co/npm/endo-firebase.svg?style=flat)](https://npmjs.org/package/endo-firebase)
+
 
 ## Installing
 
